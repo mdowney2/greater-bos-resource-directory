@@ -6,18 +6,107 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <div class="category"></div>
     <title>Contribute to the Directory</title>
+    <script src="https://kit.fontawesome.com/7527ffd1c1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+
 </head>
 <body>
-    <header></header>
-    <nav></nav>
+    <nav>   
+        <img src="./images/purple-logo.png" alt="logo">
+         <div class="nav-links">
+            <i class="fa-solid fa-bars"></i>
+        <ul>
+            <li><a href="./home.html">Home</a> </li>
+            <li><a href="./about.html">About</a> </li>
+            <li><a href="./login.html">Log In</a>  </li>
+        </ul>
+    </div></nav>
     <div class="container">
+        <div class="contribute">
+            <h2>
+                Contribute to the Greater Boston Resource Directory
+            </h2>
+        </div>
         <form class="forms">
             <div class="input-set">
             <label for="name">Name: </label>
-            
+            <input type="text" id="rsrc-name" name="name" placeholder="Resource Name">
             </div>
+            <div class="input-set">
+                <label for="type">Resource Type:</label>
+                <select name="type" id="rsrc-type" placeholder="Select Resource Type">
+                    <option selected disabled>Select</option>
+                    <option value="educational">Education/Discussion</option>
+                    <option value="material">Material Resources/Mutual Aid</option>
+                    <option value="govt-asst">Help Navigating Government Programs</option>
+                    <option value="activism">Political Activism/Engagement</option>
+                    <option value="allies">For Allies</option>
+                </select>
+            </div>
+            <div class="input-set">
+                <label for="area">Issue Area:</label>
+                <select name="area" id="issue-area" placeholder="Issue Area">
+                    <option selected disabled>Select</option>
+                    <option value="lgbtq">LGBTQ+ Resources</option>
+                    <option value="allyship">Resources for Allies</option>
+                    <option value="food">Food/Food Justice</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="housing">Housing</option>
+                    <option value="immigration">Immigration</option>
+                    <option value="legal">Legal Resources</option>
+                    <option value="political">Politics/Political Activism</option>
+                    <option value="racial-justice">Racial Justice</option>
+                    <option value="workers">For Workers</option>
+
+                </select>
+            </div>
+            <div class="input-set">
+                <label for="subissue">Subcategory:</label>
+                <select name="subissue" id="sub-issue" placeholder="Subcategory">
+                    <option selected disabled>Select</option>
+                    <option value="tenants">For Tenants</option>
+                    <option value="transgnc">For the Trans/GNC Community</option>
+                </select>
+            </div>
+            <div class="input-set">
+                <label for="link">Link to Resource</label>
+                <input type="text" name="link" id="rsrc-link">
+            </div>
+            <div class="input-set">
+                <label for="desc">Description:</label>
+                <textarea name="desc" id="description" placeholder="Description"></textarea>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="button-div">
+                <input type="submit" id="submit-button">
+            </div> 
         </form>
     </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <h3>Contribute</h3>
+            <p><a href="contribute.html">Contribute to the Directory!</a> </p>
+        </div>
+        <div class="footer-container">
+            <h3>Links</h3>
+            <ul>
+                <li><a href="home.html">Home</a> </li>
+                <li><a href="about.html">About</a> </li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+        <div class="footer-container">
+            <h3>Contact Us</h3>
+            <a href="mailto:greaterbosresourcedirectory@gmail.com"><i class="fa-solid fa-paper-plane"></i></a>
+        </div>
+        <div class="footer-container">
+            <h3>A Product Of:</h3>
+            <img src="./images/CodeSquad-logo-b.png">
+        </div>
+    </footer>
     
 </body>
 </html>

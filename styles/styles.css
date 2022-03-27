@@ -1,0 +1,331 @@
+
+/* import fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Righteous&family=Shrikhand&display=swap');
+
+/* colors */
+
+:root {
+    --offwhite: #f2efc7;
+    --darkgray: #414535;
+    --plum: #5c374c;
+    --teal: #76bed0;
+}
+
+/* nav */
+
+nav {
+    background-color: var(--plum);
+    width: 100vw;
+    margin: 0px;
+    color: var(--offwhite);
+    font-family: 'Shrikhand', sans-serif;
+    font-size: 2rem;
+}
+
+nav img {
+    max-height: 200px;
+    max-width: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 769px) {
+
+    .fa-bars{
+        visibility: hidden;
+        display: none;
+    }
+    
+}
+
+.nav-links {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    display: inline-block;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+nav a:link, a:visited {
+    color: var(--offwhite);
+    text-decoration: none;
+}
+
+/*mobile nav layout */
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+    .fa-solid .fa-bars {
+        color: var(--white);
+        position: absolute;
+        right: 0;
+        top: 0;
+        padding: 0.5rem 1rem;
+
+    }
+  .nav ul {
+        list-style: none;
+        max-width: 100%;
+    }
+    
+    .nav li a {
+        text-decoration: none;
+        color: white;
+        padding: 0.8rem 1rem;
+        display: block;
+        font-size: 1rem;
+    }
+}
+
+
+/* body */
+
+body {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    color: var(--darkgray);
+    max-width: 100vw;
+    font-size: 1.4rem;
+    background-color: var(--teal);
+}
+
+.container a:link {
+    color: var(--plum);
+}
+
+.category {
+    color: var(--plum);
+    font-family: 'Shrikhand', sans-serif;
+    margin-top: 1rem;
+}
+
+.container {
+    background-image: linear-gradient(var(--offwhite), var(--teal));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    margin-bottom: 200px;
+    margin-top: 100px;
+}
+
+.container h1, h2 {
+    font-family: 'Shrikhand', sans-serif;
+    align-self: center;
+    text-align: center;
+}
+
+.container div {
+    max-width: 85%;
+}
+
+header {
+    background-color: var(--plum);
+}
+
+.purple-button {
+    background-color: var(--plum) !important;
+    font-family: 'Shrikhand', sans-serif;
+    color: var(--offwhite);
+    padding: 10px;
+    text-align: center;
+}
+
+/* form styling */
+
+.contribute {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contribute h2 {
+    font-family: 'Shrikhand', sans-serif;
+    color: var(--darkgray);
+    text-align: center;
+}
+
+/* mobile */
+
+@media screen and (max-width: 768px) {
+    .forms {
+        background-image: linear-gradient(var(--offwhite), var(--teal));
+        border-radius: 10px;
+        width: 100%;
+        display: block;
+        box-sizing: border-box;
+        font-size: 1rem;
+        font-weight: lighter;
+        resize: vertical;
+        margin-bottom: 100px;
+        margin-top: 50px;
+      
+    }
+
+    .forms input, textarea, select {
+        box-sizing: border-box;
+        resize: vertical;
+        margin-left: 1rem;
+        float: right;
+        width: 100%;
+        text-align: left;
+    }
+
+    .input-set {
+        width: 100%;
+    }
+
+        #submit-button {
+            background-color: var(--plum) !important;
+            font-family: 'Shrikhand', sans-serif;
+            color: var(--offwhite);
+            max-width: 20%;
+            padding: 2px;
+            text-align: center;
+            resize: vertical;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    
+        .button-div {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+
+    .forms label {
+        margin: .1rem;
+    }
+
+/* desktop */
+
+@media screen and (min-width: 769px) {
+    .forms {
+        background-image: linear-gradient(var(--offwhite), var(--teal));
+        border-radius: 10px;
+    width: 70%;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: lighter;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    }
+    input, textarea, select {
+        box-sizing: border-box;
+        resize: vertical;
+        margin-left: 1rem;
+        float: right;
+        width: 70%;
+        text-align: left;
+
+    }
+
+    .forms .button {
+        box-sizing: border-box;
+        resize: vertical;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    label {
+        max-width: 30%;
+    }
+
+    .input-set {
+        margin: .5rem;
+    }
+
+    /* textarea {
+         width: 70%;
+         margin: .5rem;
+     } */
+     #submit-button {
+        background-color: var(--plum) !important;
+        font-family: 'Shrikhand', sans-serif;
+        color: var(--offwhite);
+        max-width: 20%;
+        padding: 2px;
+        text-align: center;
+    }
+
+    .button-div {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+}
+
+/* footer */
+
+
+
+.footer {
+    background-color: var(--plum);
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+}
+
+.footer-container {
+    display: inline-block;
+    max-width: 25vw;
+    margin-left: 50px;
+    margin-right: 75px;
+    text-align: center;
+}
+
+.footer img {
+    width: 150px;
+    padding: 3px;
+}
+
+@media screen and (min-width: 769px) {
+    .fa-solid fa-paper-plane {
+        color: var(--offwhite); 
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .fa-solid fa-paper-plane {
+        color: var(--offwhite); 
+    }
+}
+
+.footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.footer a {
+    text-decoration: none;
+    color: var(--offwhite);
+    text-align: center;
+}
+
+.footer h3 {
+    font-family: 'Shrikhand', sans-serif;
+    color: var(--teal);
+    font-size: 2rem;
+}
+
+
+
+
+
