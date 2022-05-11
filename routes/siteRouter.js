@@ -13,9 +13,9 @@ router.route('/login')
     .get(siteController.login);
 
 router.route('/contribute')
-    .get(siteController.contribute);
-
-router.route('/contribute')
+    .get(siteController.contribute)
     .post(resourceController.resource_create);
+
+
 
 module.exports = router;

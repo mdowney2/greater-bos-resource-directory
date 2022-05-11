@@ -9,7 +9,7 @@ router.route('/')
 router.route(':_id')
     .get(issueController.issue);
 
-router.route('/:_id/:_id')
+router.route('/:_id/issue/:_id/resource')
     .get(resourceController.resource);
 
 module.exports = router;
