@@ -1,4 +1,3 @@
-const data = require('../data/dummyData');
 const { v4: uuid } = require('uuid');
 uuid();
 

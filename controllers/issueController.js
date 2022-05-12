@@ -1,4 +1,3 @@
-const data = require('../data/dummyData');
 const { v4: uuid } = require('uuid');
 const Resource = require('../models/resourcesModel');
 const Issue = require('../models/issuesModel');
@@ -69,4 +68,4 @@ module.exports = {
                     }
                 } )
         }
-    },
+    }

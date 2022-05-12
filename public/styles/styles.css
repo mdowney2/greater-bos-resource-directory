@@ -1,30 +1,31 @@
 
 /* import fonts */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Righteous&family=Shrikhand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&display=swap');
 
 /* colors */
 
 :root {
     --offwhite: #f2efc7;
-    --darkgray: #414535;
-    --plum: #5c374c;
-    --teal: #76bed0;
+    --lightgreen: #81ee93;
+    --black: #04030f;
+    --white: #ffffff;
 }
 
 /* nav */
 
 nav {
-    background-color: var(--plum);
+    background-color: var(--black);
     width: 100vw;
     margin: 0px;
     color: var(--offwhite);
-    font-family: 'Shrikhand', sans-serif;
+    font-family: 'Barlow Condensed', Arial, sans-serif;
+    text-transform: uppercase;
     font-size: 2rem;
 }
 
 nav img {
-    max-height: 200px;
+    max-height: 2500px;
     max-width: 50%;
     display: block;
     margin-left: auto;
@@ -56,15 +57,20 @@ nav li {
 }
 
 nav a:link, a:visited {
-    color: var(--offwhite);
+    color: var(--lightgreen);
     text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #81ee93;
+    color: var(--black);
 }
 
 /*mobile nav layout */
 
 @media screen and (min-width: 320px) and (max-width: 768px) {
     .fa-solid .fa-bars {
-        color: var(--white);
+        color: var(--lightgreen);
         position: absolute;
         right: 0;
         top: 0;
@@ -83,44 +89,62 @@ nav a:link, a:visited {
         display: block;
         font-size: 1rem;
     }
+    .navbar-list {
+        display: none;
+        }
+    .navbar-list.open {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        }
 }
 
 
 /* body */
 
 body {
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    color: var(--darkgray);
+    font-family: Helvetica, sans-serif;
+    color: var(--offwhite);
     max-width: 100vw;
     font-size: 1.4rem;
-    background-color: var(--teal);
+    background-image: url("../images/gbrd-background.jpeg");
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+
+
 }
 
+
 .container a:link {
-    color: var(--plum);
+    color: var(--black);
+    text-decoration: underline;
 }
 
 .category {
-    color: var(--plum);
-    font-family: 'Shrikhand', sans-serif;
+    color: var(--black);
+    font-family: 'Barlow Condensed', Arial, sans-serif;
+    text-transform: uppercase;
     margin-top: 1rem;
 }
 
 .container {
-    background-image: linear-gradient(var(--offwhite), var(--teal));
+    background-color: var(--black);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-radius: 50px;
     margin-bottom: 200px;
     margin-top: 100px;
 }
 
 .container h1, h2 {
-    font-family: 'Shrikhand', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
     align-self: center;
     text-align: center;
+    color: var(--black);
+    background-color: var(--lightgreen);
 }
 
 .container div {
@@ -128,16 +152,10 @@ body {
 }
 
 header {
-    background-color: var(--plum);
+    background-color: var(--black);
 }
 
-.purple-button {
-    background-color: var(--plum) !important;
-    font-family: 'Shrikhand', sans-serif;
-    color: var(--offwhite);
-    padding: 10px;
-    text-align: center;
-}
+
 
 /* form styling */
 
@@ -149,8 +167,9 @@ header {
 }
 
 .contribute h2 {
-    font-family: 'Shrikhand', sans-serif;
-    color: var(--darkgray);
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    color: var(--black);
     text-align: center;
 }
 
@@ -158,16 +177,19 @@ header {
 
 @media screen and (max-width: 768px) {
     .forms {
-        background-image: linear-gradient(var(--offwhite), var(--teal));
-        border-radius: 10px;
+        background-color: var(--offwhite);
         width: 100%;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         box-sizing: border-box;
         font-size: 1rem;
         font-weight: lighter;
         resize: vertical;
         margin-bottom: 100px;
         margin-top: 50px;
+        color: var(--black);
       
     }
 
@@ -184,17 +206,7 @@ header {
         width: 100%;
     }
 
-        #submit-button {
-            background-color: var(--plum) !important;
-            font-family: 'Shrikhand', sans-serif;
-            color: var(--offwhite);
-            max-width: 20%;
-            padding: 2px;
-            text-align: center;
-            resize: vertical;
-            margin-left: auto;
-            margin-right: auto;
-        }
+       
     
         .button-div {
             display: flex;
@@ -211,16 +223,17 @@ header {
 
 @media screen and (min-width: 769px) {
     .forms {
-        background-image: linear-gradient(var(--offwhite), var(--teal));
-        border-radius: 10px;
+        background-color: var(--offwhite);
     width: 70%;
     display: inline-block;
     box-sizing: border-box;
     font-size: 1rem;
-    font-weight: lighter;
+    /* font-weight: lighter; */
     margin: 0 auto;
     margin-top: 50px;
     margin-bottom: 100px;
+    color: var(--black);
+    font-family: Helvetica, sans-serif;
     }
     input, textarea, select {
         box-sizing: border-box;
@@ -234,8 +247,8 @@ header {
 
     fieldset {
         display: flex;
-        flex-direction: row nowrap;
-        width: 90%;
+        flex-direction: column wrap;
+        width: 80%;
         margin: 0 auto;
     }
 
@@ -253,7 +266,12 @@ header {
     }
 
     label {
-        max-width: 30%;
+        width: 80%;
+    }
+
+    .checkbox-label {
+        float: left;
+        width: 80%;
     }
 
     .input-set {
@@ -265,7 +283,16 @@ header {
     .checkbox {
         display: flex;
         flex-direction: row;
+        width: 100%;
  
+    }
+
+    .checkbox-box {
+        max-width: 20%;
+    }
+
+    .column {
+        width: 50%;
     }
 
     .checkbox label {
@@ -276,14 +303,7 @@ header {
          width: 70%;
          margin: .5rem;
      } */
-     #submit-button {
-        background-color: var(--plum) !important;
-        font-family: 'Shrikhand', sans-serif;
-        color: var(--offwhite);
-        max-width: 20%;
-        padding: 2px;
-        text-align: center;
-    }
+    
 
     .button-div {
         display: flex;
@@ -300,13 +320,13 @@ header {
 
 
 .footer {
-    background-color: var(--plum);
+    background-color: var(--black);
     width: 100vw;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-family: Helvetica, sans-serif;
 }
 
 .footer-container {
@@ -328,6 +348,10 @@ header {
     }
 }
 
+.fa-solid fa-paper-plane {
+    color: var(--offwhite) !important; 
+}
+
 @media screen and (max-width: 768px) {
     .fa-solid fa-paper-plane {
         color: var(--offwhite); 
@@ -345,13 +369,64 @@ header {
     text-align: center;
 }
 
+.footer a:hover {
+    color: var(--lightgreen);
+}
+
 .footer h3 {
-    font-family: 'Shrikhand', sans-serif;
-    color: var(--teal);
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    color: var(--lightgreen);
     font-size: 2rem;
 }
 
+/* buttons */
 
+.purple-button {
+    background-color: var(--black) !important;
+    font-family: 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+    color: var(--lightgreen);
+    padding: 10px;
+    text-align: center;
+}
 
+/* form submission (jiggly) buttons */
 
+/* phone/tablet */
 
+@media screen and (max-width: 768px) {
+    .jiggly-button {
+        background-color: var(--lightgreen);
+        font-family: 'Barlow Condensed', sans-serif;
+        text-transform: uppercase;
+        max-width: 20%;
+        padding: 2px;
+        text-align: center;
+        resize: vertical;
+        margin-left: auto;
+        margin-right: auto;
+        transform: translateX(-50%)
+        translateY(-50%);
+  border-radius: 3px;
+
+    }
+}
+
+/* desktop */
+
+@media screen and (min-width: 769px) {
+    .jiggly-button{
+        background-color: var(--lightgreen);
+        font-family: 'Barlow Condensed', sans-serif;
+        text-transform: uppercase;
+        width: 40rem;
+        max-height: 3rem;
+        padding: 10px;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+    }
+}

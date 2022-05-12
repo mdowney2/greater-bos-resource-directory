@@ -22,3 +22,5 @@ router.route('/:_id/resource')
 
 router.route('/:id/adminUpdateResource')
     .get(adminController.adminUpdateResource_get)
+
+module.exports = router;
