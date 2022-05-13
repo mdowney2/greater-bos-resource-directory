@@ -430,3 +430,26 @@ header {
 
     }
 }
+
+/* boxes etc */
+
+.two-options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.green-square {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: var(--black);
+    margin: 20%;
+}
+
+.green-square h2 {
+    padding: 20%;
+    width: 100%;
+}
+
+.green-square a {
+    text-decoration: none;
+}
