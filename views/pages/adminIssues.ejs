@@ -1,0 +1,19 @@
+<%- include('../partials/head') -%>
+<%- include('../partials/nav') -%>
+<div class="container">
+    <div class="page-text">
+        <h2>Admin: Issues</h2><br />
+        <div class="boxes-flex-container">
+            <% for (issue of issuesList) { %>
+                 <div class="square">
+                    <h3><%= issue.issueName %></h3>
+                    <p> <%= issue.issueDescription %> </p>
+
+                </div>
+
+          <%  } %>
+
+        </div>
+    </div>
+</div>
+<%_ include('../partials/footer') -%>

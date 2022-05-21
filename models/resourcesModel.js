@@ -11,10 +11,10 @@ const resourceSchema = new Schema({
         type: Array,
         required: [true, 'Please select resource type.']
     },
-    issue: {
-        type: Array,
-        required: [true, "Please select issue area."]
-    },
+    issue: [{
+        type: Schema.Types.ObjectId,
+        ref: "Issue"
+    }],
     resourceLink: {
         type: String,
         required: [true, 'Please include a link to the resource.']
@@ -27,3 +27,5 @@ const resourceSchema = new Schema({
 });
 
 const Resource = mongoose.model('Resource', resourceSchema);
+
+module.exports = Resource;

@@ -15,6 +15,19 @@ module.exports = {
         })
 
     },
+    admin_all_resources: (request, response) => {
+        Resource.find({}, (error, allResources) => {
+            if (error) {
+                return error;
+            } else {
+                response.render('pages/adminResources', {
+                    resourcesList: allResources,
+                })
+    
+            }
+        
+    }
+        )},
     createResource_post: (request, response) => {
         const {resourceName, resourceType, issue, resourceLink, description} = request.body;
         const newResource = new Resource ({

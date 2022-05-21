@@ -453,3 +453,10 @@ header {
 .green-square a {
     text-decoration: none;
 }
+
+.boxes-flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}

@@ -1,0 +1,11 @@
+<%
+let resource = siteData;
+for (let book of books) { %>
+<tr>
+    <td> <%= book.title %> </td>
+    <td><a href="/admin-console/update-book/<%= book.id %>"> <button class="edit-button">EDIT</button></a></td>
+    <td><form action="/books/<%= book._id %>?_method=DELETE" method="post" enctype="application/x-www-form-urlencoded">
+    <input type="submit" value="DELETE" class="delete-button"> </form> </td>
+</tr>
+
+<% } %>

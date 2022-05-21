@@ -55,17 +55,18 @@ module.exports = {
         issue: (request, response) => {
             const {_id} = request.params;
             const thisIssue = request.body;
-            const issueToRender = Issue.findOne({_id: _id});
-            Resource.
-                findMany({thisIssue: {$in: issue}}, (error, applicableResources) => {
-                    if (error) {
-                        return error;
-                    } else {
-                        response.render('pages/issue', {
-                            issue: thisIssue,
-                            resourceArray: applicableResources,
-                        })
-                    }
-                } )
+            Issue.findbyId({_id}).
+            populate('Resource').
+            exec (function (error, issueResources) {
+                if (error) {
+                    return error;
+                } else {
+                    response.render('pages/issue', {
+                        issue: thisIssue,
+                        resource: issueResources,
+                    })
+                }
+            })
+
         }
     }
