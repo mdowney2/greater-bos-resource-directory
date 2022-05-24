@@ -14,14 +14,14 @@ router.route('/login')
 
 router.route('/contribute')
     .get(siteController.contribute)
-    .post(resourceController.createResource_post)
+    // .post(resourceController.createResource_post)
 
 router.route('/logout')
     .get(siteController.logout)
 
 router.route('/signup')
     .get(siteController.register_get)
-    .post(siteController.register_post)
+    // .post(siteController.register_post)
 
 
 

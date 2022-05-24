@@ -1,11 +1,24 @@
 const { v4: uuid } = require('uuid');
 const Resource = require('../models/resourcesModel');
+// const Resource = require('Resource');
 const Issue = require('../models/issuesModel');
+const { response } = require('express');
+// const Issue = require('Issue');
 uuid();
 
 module.exports = {
-    issues: (request, response) => {
-        response.render('pages/issues');
+    all_issues: (request, response) => {
+        Issue.find({}, (error, allIssues) => {
+            if (error) {
+                return error;
+            } else {
+                console.log(allIssues);
+                response.render('pages/issues', {
+                    allIssues: allIssues,
+                })
+            }
+        })
+
     },
     admin_addIssue_post: (request, response) => {
         const {issueName, issueDescription} = request.body;
@@ -31,42 +44,29 @@ module.exports = {
             }
         });
     },
-    // issue: (request, response) => {
-    //     const {_id} = request.params;
-    //     const thisIssue = request.body;
-    //     const issueToRender = Issue.findOne({_id: _id});
-    //     Issue.findOne({_id: _id}) => {
-    //         if (error) {
-    //             return error;
-    //         } else {
-    //             response.render('pages/issue', {
-    //                 resourceArray: allResources
-    //             })
-    //         }
-    //     });
-        
-    //     Resource.find({thisIssue: {$in: issue}}, (error, theseResources) => {
-    //         if (error) {
-    //             return error;
-    //         } else {
-    //             response
-    //         }
-    //     })
         issue: (request, response) => {
             const {_id} = request.params;
-            const thisIssue = request.body;
-            Issue.findbyId({_id}).
-            populate('Resource').
-            exec (function (error, issueResources) {
+            Issue.findOne({_id}, (error, thisIssue) => {
                 if (error) {
-                    return error;
+                    return error
                 } else {
-                    response.render('pages/issue', {
-                        issue: thisIssue,
-                        resource: issueResources,
+                    console.log(thisIssue);
+                    let thisIssueName = thisIssue.issueName;
+                    console.log(thisIssueName);
+                    Resource.find({issue: thisIssueName}, (error, resourcesArray) => {
+                        if (error) {
+                            return error
+                        } else {
+                            console.log(resourcesArray);
+                            response.render('pages/issue', {
+                                issue: thisIssue,
+                                resources: resourcesArray,
+                            })
+                        }
                     })
                 }
             })
 
         }
     }
+

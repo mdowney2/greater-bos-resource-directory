@@ -2,18 +2,20 @@
 <%- include('../partials/nav') -%>
 <div class="container">
     <div class="page-text">
-        <h2>Admin: Issues</h2><br />
-        <div class="boxes-flex-container">
-            <% for (issue of issuesList) { %>
-                 <div class="square">
-                    <h3><%= issue.issueName %></h3>
-                    <p> <%= issue.issueDescription %> </p>
-
-                </div>
-
-          <%  } %>
-
-        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Issue Name</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%- include('../partials/adminIssue', {
+                    issues: allIssues,
+                }) %>
+            </tbody>
+        </table>
     </div>
 </div>
 <%_ include('../partials/footer') -%>

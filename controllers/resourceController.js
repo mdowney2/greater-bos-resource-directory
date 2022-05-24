@@ -1,4 +1,5 @@
 const { v4: uuid } = require('uuid');
+const Resource = require('../models/resourcesModel');
 uuid();
 
 module.exports = {
@@ -15,13 +16,26 @@ module.exports = {
         })
 
     },
+    admin_get_oneResource: (request, response) => {
+        const {_id} = request.params;
+        Resource.findOne({_id: _id}, (error, foundResource) => {
+            if (error) {
+                return error;
+            } else {
+                response.render('pages/resource/:_id', {
+                    resource: foundResource,
+                });
+            };
+        })
+    },
     admin_all_resources: (request, response) => {
+        const { _id } = request.params;
         Resource.find({}, (error, allResources) => {
             if (error) {
                 return error;
             } else {
                 response.render('pages/adminResources', {
-                    resourcesList: allResources,
+                    allResources: allResources,
                 })
     
             }

@@ -1,0 +1,11 @@
+
+
+<%
+for (let issue of allIssues) { %>
+    <tr>
+        <td> <%= issue.issueName %></td>
+        <td><button class="submit-button">Edit</button> </td>
+        <td><form action="/issues/<%=issue._id %>?_method=DELETE" method="POST" enctype="application/x-www-form-urlencoded"><input type='submit' value="Delete" class="submit-button"> </form> </td>
+        </tr>
+        <%
+} %>

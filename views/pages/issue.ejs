@@ -1,3 +1,21 @@
 <%- include('../partials/head') -%>
 <%- include('../partials/nav') -%>
+<div class="container">
+
+        <h2> <%=issue.issueName %></h2>
+        <p> <%= issue.issueDescription %></p>
+    <div class="flex-container">
+    <% for (let resource of resources) { %>
+    <div class="individual-resource-container">
+        <p><strong> <%= resource.resourceName %></strong></p>
+        <p><strong>Type: </strong><%= resource.resourceType %></p>
+        <p><strong>Issues:</strong> <%=resource.issue %></p>
+        <p><strong>Link:</strong><a href="<%=resource.resourceLink %>"> Click Here!</a> </p>
+        <p><strong>Description:</strong> <%=resource.description %> </p>
+
+</div>
+   <% } %>
+</div>
+</div>
+
 <%- include('../partials/footer') -%>

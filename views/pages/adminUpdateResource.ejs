@@ -6,17 +6,17 @@
                 Contribute to the Greater Boston Resource Directory
             </h2>
         </div>
-        <form class="forms">
+        <form class="forms" action="/resources/<%=resource._id %>?_method=PUT" method="POST" >
             <div class="input-set">
             <label for="name">Name: </label>
-            <input type="text" id="rsrc-name" name="name" placeholder="Resource Name">
+            <input type="text" id="rsrc-name" name="name" placeholder="Resource Name" value="<%=resource.resourceName%>">
             </div>
             <fieldset>
                 <legend>Resource Type:</legend>
                 <div class="column">
                 <div class="input-set checkbox">
                 <label for="educational">Education/Discussion</label>
-                <input type="checkbox" id="education" value="educational" name="educational">
+                <input type="checkbox" id="education" value="<educational>" name="educational">
             </div>
                 <div class="input-set checkbox">
                 <label for="material">Material Resources/Mutual Aid</label>
@@ -99,11 +99,11 @@
             </fieldset>
             <div class="input-set">
                 <label for="link">Link to Resource</label>
-                <input type="text" name="link" id="rsrc-link">
+                <input type="text" name="link" id="rsrc-link" value="<%=resource.resourceLink%>" >
             </div>
             <div class="input-set">
                 <label for="desc">Description:</label>
-                <textarea name="desc" id="description" placeholder="Description"></textarea>
+                <textarea name="desc" id="description" placeholder="Description" value="<%=resource.description%>" ></textarea>
             </div>
             <br />
             <br />

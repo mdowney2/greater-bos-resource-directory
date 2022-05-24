@@ -10,7 +10,7 @@ const app = express();
 
 app.use(routes);
 
-const PORT = 3000;
+const PORT = 3005;
 
 app.use(morgan('combined'));
 app.set('view engine', 'ejs');
@@ -25,7 +25,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+require('./config/connection');
 
 app.listen(PORT, () => {
     console.log(`The server is listening on port ${PORT}`);

@@ -11,10 +11,10 @@ const resourceSchema = new Schema({
         type: Array,
         required: [true, 'Please select resource type.']
     },
-    issue: [{
-        type: Schema.Types.ObjectId,
-        ref: "Issue"
-    }],
+    issue: {
+        type: String,
+        required: [true, 'Applicable issue(s) required.']
+    },
     resourceLink: {
         type: String,
         required: [true, 'Please include a link to the resource.']

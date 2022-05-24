@@ -13,8 +13,9 @@ module.exports = {
             if (error) {
                 return error;
             } else {
+                console.log(allIssues);
                 response.render('pages/adminIssues', {
-                    issuesList: allIssues
+                    allIssues: allIssues
                 });
             };
         });
@@ -25,23 +26,24 @@ module.exports = {
 
     admin_showIssuePage: (request, response) => {
         const { _id } = request.params;
-        issues.findOne({_id: _id}, (error, foundIssue) => {
+        Issue.findOne({_id: _id}, (error, foundIssue) => {
             if (error) {
                 return error;
             } else {
+                console.log(foundIssue);
                 response.render('pages/adminIssues', {
-                    issue: foundIssue
+                    foundIssue: foundIssue
                 });
             };
         });
     },
     admin_allResources: (request, response) => {
-        issues.find({}, (error, allResources) => {
+        Resource.find({}, (error, allResources) => {
             if (error) {
                 return error;
             } else {
                 response.render('pages/adminResources', {
-                    resourcesArray: allResources
+                    allResources: allResources
                 })
             }
         })

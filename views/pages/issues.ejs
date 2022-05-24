@@ -1,16 +1,20 @@
 <%- include('../partials/head') -%>
 <%- include('../partials/nav') -%>
     <div class="container">
-        <h2>Resource Categories</h2>
-        <div class="category">LGBTQ+</div>
-        <div class="category">Allyship</div>
-        <div class="category">Food</div>
-        <div class="category">Healthcare</div>
-        <div class="category">Housing</div>
-        <div class="category">Immigration</div>
-        <div class="category">Legal</div>
-        <div class="category">Political Activism</div>
-        <div class="category">Racial Justice</div>
-        <div class="category">Workers' Rights</div>
+        <h2>Issues</h2>
+        <p>Resources submitted to the GBRD are organized according to the categories below. Please select the one you're interested in to view the related resources!</p>
+        <div class="flex-container">
+
+            <% for (let issue of allIssues) { %> 
+                <a href="/issues/<%=issue._id%>"> 
+<div class="individual-issue-container">
+
+                     <h3> <%= issue.issueName %></h3>
+                 </div>
+                </a>
+                
+            <% } %>
+        </div>
+
     </div>
     <%- include('../partials/footer') -%>

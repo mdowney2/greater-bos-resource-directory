@@ -1,0 +1,21 @@
+<%- include('../partials/head') -%>
+<%- include('../partials/nav') -%>
+<div class="container">
+    <div class="page-text">
+        <table>
+            <thead>
+                <tr>
+                    <th>Resource Name</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%- include('../partials/resource-tablerow', {
+                    resources: allResources,
+                }) %>
+            </tbody>
+        </table>
+    </div>
+</div>
+<%_ include('../partials/footer') -%>
