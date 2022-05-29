@@ -1,6 +1,6 @@
 
 const Resource = require('../models/resourcesModel');
-uuid();
+
 
 module.exports = {
     resource: (request, response) => {

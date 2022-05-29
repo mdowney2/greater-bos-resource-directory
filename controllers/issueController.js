@@ -4,7 +4,6 @@ const Resource = require('../models/resourcesModel');
 const Issue = require('../models/issuesModel');
 const { response } = require('express');
 // const Issue = require('Issue');
-uuid();
 
 module.exports = {
     all_issues: (request, response) => {
