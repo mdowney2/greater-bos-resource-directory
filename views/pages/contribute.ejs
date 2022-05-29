@@ -6,47 +6,47 @@
                 Contribute to the Greater Boston Resource Directory
             </h2>
         </div>
-        <form class="forms" action="/issue/:_id" method="POST">
+        <form class="forms" action="/resources" method="POST">
             <div class="input-set">
             <label for="name">Name: </label>
-            <input type="text" id="rsrc-name" name="name" placeholder="Resource Name">
+            <input type="text" id="rsrc-name" name="resourceName" placeholder="Resource Name">
             </div>
             <fieldset>
                 <legend>Resource Type:</legend>
                 <div class="column">
                 <div class="input-set checkbox">
                 <label for="educational" class="checkbox-label">Education/Discussion</label>
-                <input type="checkbox" class="checkbox-box" id="education" value="educational" name="educational">
+                <input type="checkbox" class="checkbox-box" id="education" value="educational" name="resourceType">
             </div>
                 <div class="input-set checkbox">
                 <label for="material" class="checkbox-label">Material Resources/Mutual Aid</label>
-                <input type='checkbox' class="checkbox-box" id="material" value="material" name="material">
+                <input type='checkbox' class="checkbox-box" id="material" value="material" name="resourceType">
             </div>
             <div class="input-set checkbox">
                 <label for="help-govt" class="checkbox-label">Help Navigating Government Programs</label>
-                <input type="checkbox" class="checkbox-box" id="help-govt" value="help-govt" name="help-govt">
+                <input type="checkbox" class="checkbox-box" id="help-govt" value="help-govt" name="resourceType">
             </div>
             <div class="input-set checkbox">
                 <label for="activism" class="checkbox-label">Political Activism/Engagement</label>
-                <input type="checkbox" class="checkbox-box" id="activism" value="activism" name="activism">
+                <input type="checkbox" class="checkbox-box" id="activism" value="activism" name="resourceType">
             </div>
         </div>
         <div class="column">
             <div class="input-set checkbox">
                 <label for="allies" class="checkbox-label">For Allies</label>
-                <input type='checkbox' class="checkbox-box" id="allies" value="allies" name="allies">
+                <input type='checkbox' class="checkbox-box" id="allies" value="allies" name="resourceType">
             </div>
             <div class="input-set checkbox">
                 <label for="govt" class="checkbox-label">Government Programs</label>
-                <input type='checkbox' class="checkbox-box" id="govt" value="govt" name="govt">
+                <input type='checkbox' class="checkbox-box" id="govt" value="govt" name="resourceType">
             </div>
             <div class="input-set checkbox">
                 <label for="hco" class="checkbox-label">Healthcare Organization</label>
-                <input type="checkbox" class="checkbox-box" id="hco" value="hco" name="hco">
+                <input type="checkbox" class="checkbox-box" id="hco" value="hco" name="resourceType">
             </div>
             <div class="input-set checkbox">
                 <label for="social" class="checkbox-label">Social Support/Programming</label>
-                <input type="checkbox" class="checkbox-box" id="social" value="social" name="social">
+                <input type="checkbox" class="checkbox-box" id="social" value="social" name="resourceType">
             </div>
             </div>
                 </fieldset>
@@ -55,55 +55,55 @@
                 <div class="column">
                 <div class="input-set checkbox">
                 <label for="lgbtq" class="checkbox-label">LGBTQ+ Resources</label>
-                <input type="checkbox" class="checkbox-box" id="lgbtq" value="lgbtq" name="issue">
+                <input type="checkbox" class="checkbox-box" id="lgbtq" value="LGBTQ+ Community" name="issue">
             </div>
             <div class="input-set checkbox">
                 <label for="allyship" class="checkbox-label">Allyship</label>
-                <input type="checkbox" class="checkbox-box" id="forAllies" value="forAllies" name="issue">
+                <input type="checkbox" class="checkbox-box" id="forAllies" value="For Allies" name="issue">
             </div>
             <div class="input-set checkbox">
                 <label for="food" class="checkbox-label">Food/Food Justice</label>
-                <input type="checkbox" class="checkbox-box" id="food" value="food" name="issue">
+                <input type="checkbox" class="checkbox-box" id="food" value="Food/Food Justice" name="issue">
             </div>
             <div class="input-set checkbox">
                 <label for="healthcare" class="checkbox-label">Healthcare</label>
-                <input type="checkbox" class="checkbox-box" id="healthcare" value="healthcare" name="issue">
+                <input type="checkbox" class="checkbox-box" id="healthcare" value="Healthcare" name="issue">
             </div>
             <div class="input-set checkbox">
                 <label for="housing" class="checkbox-label">Housing</label>
-                <input type="checkbox" class="checkbox-box" id="housing" value="housing" name="issue">
+                <input type="checkbox" class="checkbox-box" id="housing" value="Housing" name="issue">
             </div>
         </div>
         <div class='column'>
             <div class="input-set checkbox">
                 <label for="immigration" class="checkbox-label">Immigration/Immigrant Communities</label>
-                <input type="checkbox" class="checkbox-box" id="immig" value="immigration" name="issue">
+                <input type="checkbox" class="checkbox-box" id="immig" value="Immigration" name="issue">
             </div>
             <div class="input-set checkbox">
                 <label for="legal" class="checkbox-label">Legal Resources</label>
-                <input type="checkbox" class="checkbox-box" id="legal" value="legal" name="issue">
+                <input type="checkbox" class="checkbox-box" id="legal" value="Legal Resources" name="issue">
             </div>
             <div class="input-set checkbox">
                 <label for="political" class="checkbox-label">Politics/Political Activism</label>
-                <input type="checkbox" class="checkbox-box" id="political" value="political" name="issue">
+                <input type="checkbox" class="checkbox-box" id="political" value="Politics/Political Activism" name="issue">
             </div>
             <div class="input-set checkbox">
                 <label for="racialJustice" class="checkbox-label">Racial Justice</label>
-                <input type="checkbox" class="checkbox-box" id="racialJustice" value="rJ" name="issue">
+                <input type="checkbox" class="checkbox-box" id="racialJustice" value="Racial Justice" name="issue">
             </div>
             <div class="input-set checkbox">
                 <label for="workers" class="checkbox-label">For Workers</label>
-                <input type="checkbox" class="checkbox-box" id="workers" value="workers" name="issue">
+                <input type="checkbox" class="checkbox-box" id="workers" value="For Workers" name="issue">
             </div>
         </div>
             </fieldset>
             <div class="input-set">
                 <label for="link">Link to Resource</label>
-                <input type="text" name="link" id="rsrc-link">
+                <input type="text" name="resourceLink" id="rsrc-link">
             </div>
             <div class="input-set">
                 <label for="desc">Description:</label>
-                <textarea name="desc" id="description" placeholder="Description"></textarea>
+                <textarea name="description" id="description" placeholder="Description"></textarea>
             </div>
             <br />
             <br />

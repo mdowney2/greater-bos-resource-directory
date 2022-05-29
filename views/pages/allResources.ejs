@@ -1,5 +1,7 @@
 <%- include('../partials/head') -%>
 <%- include('../partials/nav') -%>
+<%- include('../partials/head') -%>
+<%- include('../partials/nav') -%>
 <div class="container">
     <div class="page-text">
         <table>
@@ -7,13 +9,13 @@
                 <tr>
                     <th>Resource Name</th>
                     <th>Issue</th>
-                    <th>Update</th>
-                    <th>Delete</th>
+                    <th>Type</th>
+                    <th>Link</th>
                 </tr>
             </thead>
             <tbody>
-                <%- include('../partials/resource-tablerow', {
-                    resources: allResources,
+                <%- include('../partials/resourceTable', {
+                    allResources: allResources,
                 }) %>
             </tbody>
         </table>

@@ -4,8 +4,8 @@
 for (let issue of allIssues) { %>
     <tr>
         <td> <%= issue.issueName %></td>
-        <td><button class="submit-button">Edit</button> </td>
-        <td><form action="/issues/<%=issue._id %>?_method=DELETE" method="POST" enctype="application/x-www-form-urlencoded"><input type='submit' value="Delete" class="submit-button"> </form> </td>
+        <td><a href="./<%= issue._id %>/adminUpdateIssue"> <button class="admin-button">Edit</button></a> </td>
+        <td><form action="/issues/<%=issue._id %>?_method=DELETE" method="POST" enctype="application/x-www-form-urlencoded"><input type='submit' value="Delete" class="admin-button"> </form> </td>
         </tr>
         <%
 } %>

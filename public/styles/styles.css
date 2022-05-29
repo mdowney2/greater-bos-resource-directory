@@ -401,7 +401,17 @@ header {
     text-align: center;
 }
 
-/* form submission (jiggly) buttons */
+.black-button {
+    background-color: var(--black);
+    font-family: Helvetica, sans-serif;
+    font-weight: lighter;
+    color: var(--offwhite);
+    margin: 0 auto;
+    border: 0;
+    margin: .3rem;
+    margin-left: 4rem;
+    padding: .2rem;
+}
 
 /* phone/tablet */
 
@@ -419,6 +429,7 @@ header {
         transform: translateX(-50%)
         translateY(-50%);
   border-radius: 3px;
+  border: 0;
 
     }
 }
@@ -576,4 +587,17 @@ header {
         max-height: 80%;
     }
     
+    }
+
+    /* admin tables */
+    thead {
+        color: var(--lightgreen);
+        font-family: 'Barlow Condensed';
+        text-transform: uppercase;
+    }
+
+    .admin-button {
+        background-color: var(--lightgreen);
+        font-family: 'Barlow Condensed';
+        text-transform: uppercase;
     }

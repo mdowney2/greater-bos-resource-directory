@@ -11,6 +11,7 @@ router.route('/about')
 
 router.route('/login')
     .get(siteController.login_get)
+    .post(siteController.login_post)
 
 router.route('/contribute')
     .get(siteController.contribute)
@@ -19,9 +20,9 @@ router.route('/contribute')
 router.route('/logout')
     .get(siteController.logout)
 
-router.route('/signup')
+router.route('/register')
     .get(siteController.register_get)
-    // .post(siteController.register_post)
+    .post(siteController.register_post)
 
 
 

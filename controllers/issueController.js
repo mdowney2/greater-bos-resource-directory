@@ -21,29 +21,38 @@ module.exports = {
 
     },
     admin_addIssue_post: (request, response) => {
+        if (request.isAuthenticated()) {
         const {issueName, issueDescription} = request.body;
+        console.log(issueName);
+        console.log(issueDescription);
         const newIssue = new Issue({
             issueName: issueName,
             issueDescription: issueDescription
         });
         newIssue.save();
-        response.redirect('admin/adminIssues');
-    },
+        response.redirect('admin/issues');
+    } else {
+        response.redirect('pages/login');
+    }},
 
     admin_issueUpdate_put: (request, response) => {
+        if (request.isAuthenticated()) {
         const {_id} = request.params;
         const {issueName, issueDescription} = request.body;
-        Issue.findOneAndUpdate(_id, {$set: {
+        console.log(request.body);
+        Issue.findByIdAndUpdate(_id, {$set: {
             issueName: issueName,
-            issueDescription: issueDescription
+            issueDescription: issueDescription,
         }}, {new: true}, error => {
             if (error) {
                 return error;
             } else {
-                response.redirect('admin/adminIssues');
+                response.redirect('/admin/issues');
             }
         });
-    },
+    } else {
+        response.redirect('pages/login');
+    }},
         issue: (request, response) => {
             const {_id} = request.params;
             Issue.findOne({_id}, (error, thisIssue) => {
@@ -67,6 +76,19 @@ module.exports = {
                 }
             })
 
-        }
+        },
+        admin_deleteIssue: (request, response) => {
+            if (request.isAuthenticated()) {
+            const {_id} = request.params;
+            Issue.deleteOne({_id: _id}, error => {
+                if (error) {
+                    return error;
+                } else {
+                    response.redirect('/admin/issues');
+                }
+            })
+        } else {
+            response.redirect('pages/login');
+        }}
     }
 

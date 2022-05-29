@@ -1,0 +1,11 @@
+
+<%
+for (let resource of allResources) { %>
+    <tr>
+        <td> <%= resource.resourceName %></td>
+        <td> <%= resource.issue %></td>
+        <td> <%= resource.resourceType %> </td>
+        <td> <a href="<%=resource.resourceLink%>">Link</a> </td>
+        </tr>
+        <%
+} %>

@@ -12,7 +12,7 @@ const resourceSchema = new Schema({
         required: [true, 'Please select resource type.']
     },
     issue: {
-        type: String,
+        type: Array,
         required: [true, 'Applicable issue(s) required.']
     },
     resourceLink: {

@@ -1,12 +1,12 @@
-
-
 <%
 for (let resource of allResources) { %>
     <tr>
         <td> <%= resource.resourceName %></td>
         <td> <%= resource.issue %></td>
-        <td><button class="submit-button">Edit</button> </td>
-        <td><form action="/resources/<%=resource._id %>?_method=DELETE" method="POST" enctype="application/x-www-form-urlencoded"><input type='submit' value="Delete" class="submit-button"> </form> </td>
+        <td><a href="./<%= resource._id %>/adminUpdateResource" class="green-link">Edit</a> </td>
+        <td><form action="/resources/<%=resource._id %>?_method=DELETE" method="POST" enctype="application/x-www-form-urlencoded"><input type='submit' value="Delete" class="admin-button"> </form> </td>
         </tr>
         <%
 } %>
+
+

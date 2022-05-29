@@ -9,7 +9,7 @@ module.exports = {
             if (error) {
                 return error;
             } else {
-                response.render('pages/resource/:_id', {
+                response.render('pages/resourceDetail/:_id', {
                     resource: foundResource
                 });
             }
@@ -29,6 +29,7 @@ module.exports = {
         })
     },
     admin_all_resources: (request, response) => {
+        if (request.isAuthenticated()) {
         const { _id } = request.params;
         Resource.find({}, (error, allResources) => {
             if (error) {
@@ -38,12 +39,27 @@ module.exports = {
                     allResources: allResources,
                 })
     
-            }
+            } 
+    })} else {
+        response.redirect('pages/login');
+    }},
+        allResources: (request, response) => {
+            const { _id } = request.params;
+            Resource.find({}, (error, allResources) => {
+                if (error) {
+                    return error;
+                } else {
+                    response.render('pages/allResources', {
+                        allResources: allResources,
+                    })
         
-    }
-        )},
+                }
+            
+        }
+            )},
     createResource_post: (request, response) => {
         const {resourceName, resourceType, issue, resourceLink, description} = request.body;
+        console.log(request.body);
         const newResource = new Resource ({
             resourceName: resourceName,
             resourceType: resourceType,
@@ -52,28 +68,41 @@ module.exports = {
             description: description
         });
         newResource.save();
-        response.redirect('pages/resource/:_id');
+        console.log(newResource);
+        response.redirect('/');
     },
-    admin_updateResource: (request, response) => {
+    admin_updateResource_put: (request, response) => {
+        if (request.isAuthenticated()) {
         const { _id } = request.params;
-        Resource.findOne({_id: _id}, (error, foundResource) => {
+        const {resourceName, resourceType, issue, resourceLink, description} = request.body;
+        console.log(request.body);
+        Resource.findByIdAndUpdate(_id, {$set: {
+            resourceName: resourceName,
+            resourceType: resourceType,
+            issue: issue,
+            resourceLink: resourceLink,
+            description: description,
+        }}, {new: true}, error => {
             if (error) {
-                return Error;
+                return error;
             } else {
-                response.render('pages/update-resource', {
-                    foundResource: foundResource,
-                });
-            };
+                response.redirect('/admin/resources');
+            }
         })
-    },
+    } else {
+        response.redirect('pages/login');
+    }},
     admin_deleteResource: (request, response) => {
+        if (request.isAuthenticated()) {
         const {_id} = request.params;
         Resource.deleteOne({_id: _id}, error => {
             if (error) {
                 return error;
             } else {
-                response.redirect('/admin/adminResources');
+                response.redirect('/admin/resources');
             }
         });
+    } else {
+        response.redirect('pages/login');
     }
-}
+}}
