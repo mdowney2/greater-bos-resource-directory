@@ -28,7 +28,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(routes);
 
-const PORT = 3005;
+const PORT = process.env.PORT || 3005;
 
 app.use(morgan('combined'));
 app.set('view engine', 'ejs');
